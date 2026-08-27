@@ -1,0 +1,2738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Funding the Future | Education Policy Project</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================================================
+       1. VARIABLES
+    ========================================================= */
+
+    :root {
+      --navy: #14263d;
+      --navy-light: #203a59;
+      --navy-dark: #0d1b2a;
+
+      --cream: #f6f3ed;
+      --cream-dark: #ebe5db;
+      --white: #ffffff;
+
+      --blue: #9eb7cf;
+      --blue-light: #dce6ee;
+      --blue-pale: #edf3f7;
+
+      --gold: #b49765;
+      --gold-light: #dccba9;
+
+      --text: #1c2732;
+      --muted: #66727d;
+      --border: rgba(20, 38, 61, 0.14);
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --max-width: 1240px;
+
+      --shadow:
+        0 20px 50px rgba(20, 38, 61, 0.08);
+
+      --radius: 22px;
+    }
+
+
+    /* =========================================================
+       2. RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    ::selection {
+      background: var(--blue);
+      color: var(--navy-dark);
+    }
+
+
+    /* =========================================================
+       3. GENERAL LAYOUT
+    ========================================================= */
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-small {
+      padding: 75px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      color: var(--navy-dark);
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      max-width: 850px;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 24px;
+    }
+
+    .placeholder {
+      color: #7b8792;
+      font-style: italic;
+    }
+
+
+    /* =========================================================
+       4. TOP ANNOUNCEMENT BAR
+    ========================================================= */
+
+    .announcement {
+      background: var(--navy-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .announcement span {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       5. NAVIGATION
+    ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(246, 243, 237, 0.94);
+      border-bottom: 1px solid var(--border);
+
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+
+    .navbar {
+      height: 86px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid rgba(20, 38, 61, 0.28);
+      border-radius: 50%;
+
+      color: var(--navy);
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+
+      background: var(--white);
+    }
+
+    .brand-text small {
+      display: block;
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 1.03rem;
+      line-height: 1.1;
+    }
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-button {
+      display: none;
+
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       6. HERO
+    ========================================================= */
+
+    .hero {
+      min-height: calc(100vh - 120px);
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      padding: 90px 0 110px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 82% 15%,
+          rgba(158, 183, 207, 0.35),
+          transparent 28%
+        ),
+        linear-gradient(
+          125deg,
+          #f6f3ed 0%,
+          #f6f3ed 58%,
+          #e7edf1 100%
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      width: 560px;
+      height: 560px;
+
+      right: -230px;
+      bottom: -240px;
+
+      border: 1px solid rgba(20, 38, 61, 0.13);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      width: 430px;
+      height: 430px;
+
+      right: -170px;
+      bottom: -175px;
+
+      border: 1px solid rgba(180, 151, 101, 0.26);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      margin-bottom: 26px;
+
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 45px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      color: var(--navy-dark);
+
+      font-size: clamp(4rem, 8.4vw, 8.3rem);
+      line-height: 0.88;
+
+      letter-spacing: -0.055em;
+
+      max-width: 950px;
+    }
+
+    .hero h1 em {
+      color: var(--navy-light);
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 680px;
+
+      margin-top: 32px;
+
+      color: #526170;
+      font-size: clamp(1rem, 1.4vw, 1.18rem);
+    }
+
+    .hero-buttons {
+      margin-top: 40px;
+
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      min-height: 50px;
+      padding: 0 24px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      border-radius: 999px;
+
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--navy);
+      color: var(--navy);
+    }
+
+    .brief-card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.96),
+          rgba(243,246,248,0.92)
+        );
+
+      border: 1px solid rgba(20, 38, 61, 0.13);
+      border-radius: 30px;
+
+      padding: 38px;
+
+      box-shadow: var(--shadow);
+
+      position: relative;
+    }
+
+    .brief-card::before {
+      content: "";
+
+      position: absolute;
+      width: 44px;
+      height: 3px;
+
+      top: 0;
+      left: 38px;
+
+      background: var(--gold);
+    }
+
+    .brief-card-number {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      color: var(--blue);
+      line-height: 1;
+    }
+
+    .brief-card h3 {
+      margin-top: 18px;
+      margin-bottom: 12px;
+
+      font-family: var(--serif);
+      color: var(--navy);
+
+      font-size: 1.65rem;
+    }
+
+    .brief-card p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .brief-card hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    .brief-meta {
+      display: grid;
+      gap: 12px;
+    }
+
+    .brief-meta-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      font-size: 0.78rem;
+    }
+
+    .brief-meta-row span:first-child {
+      color: var(--muted);
+    }
+
+    .brief-meta-row span:last-child {
+      color: var(--navy);
+      font-weight: 700;
+      text-align: right;
+    }
+
+
+    /* =========================================================
+       7. OVERVIEW / LARGE STATEMENT
+    ========================================================= */
+
+    .overview {
+      background: var(--navy);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overview::after {
+      content: "EDUCATION";
+
+      position: absolute;
+      right: -15px;
+      bottom: -42px;
+
+      font-family: var(--serif);
+      font-size: clamp(6rem, 16vw, 15rem);
+      font-weight: 700;
+
+      color: rgba(255,255,255,0.025);
+      letter-spacing: -0.05em;
+
+      pointer-events: none;
+    }
+
+    .overview .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .overview .section-title {
+      color: white;
+      max-width: 1000px;
+    }
+
+    .overview-text {
+      max-width: 850px;
+      margin-top: 32px;
+
+      color: #d3dde6;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+    }
+
+
+    /* =========================================================
+       8. FUNDING CARDS
+    ========================================================= */
+
+    .funding {
+      background: var(--white);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+
+      margin-top: 55px;
+    }
+
+    .fund-card {
+      min-height: 350px;
+      padding: 34px;
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .fund-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .fund-card:nth-child(1) {
+      background: #f7f8f9;
+    }
+
+    .fund-card:nth-child(2) {
+      background: var(--blue-pale);
+    }
+
+    .fund-card:nth-child(3) {
+      background: #f7f3ea;
+    }
+
+    .card-index {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.4rem;
+    }
+
+    .fund-card h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1.05;
+      color: var(--navy);
+
+      margin-top: 24px;
+    }
+
+    .fund-card p {
+      color: var(--muted);
+      margin-top: 20px;
+      font-size: 0.94rem;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      width: max-content;
+
+      margin-top: 30px;
+
+      padding: 8px 11px;
+      border: 1px solid rgba(20, 38, 61, 0.14);
+      border-radius: 999px;
+
+      color: var(--navy);
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================================
+       9. FEATURE SPLIT
+    ========================================================= */
+
+    .feature {
+      background: var(--cream);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: stretch;
+    }
+
+    .feature-visual {
+      min-height: 600px;
+      border-radius: 30px;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 40px;
+
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(13,27,42,0.18),
+          rgba(13,27,42,0.7)
+        ),
+        radial-gradient(
+          circle at 70% 20%,
+          #a8c2d5,
+          #38556d 52%,
+          #16283b 100%
+        );
+    }
+
+    .feature-visual::before,
+    .feature-visual::after {
+      content: "";
+
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+    }
+
+    .feature-visual::before {
+      width: 360px;
+      height: 360px;
+      right: -90px;
+      top: -80px;
+    }
+
+    .feature-visual::after {
+      width: 250px;
+      height: 250px;
+      right: -45px;
+      top: -30px;
+    }
+
+    .visual-caption {
+      position: relative;
+      z-index: 2;
+
+      color: white;
+    }
+
+    .visual-caption small {
+      display: block;
+
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+      color: #dce8ef;
+    }
+
+    .visual-caption h3 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1.05;
+      max-width: 350px;
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .feature-content h2 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .feature-content > p {
+      margin-top: 25px;
+      color: var(--muted);
+      max-width: 650px;
+    }
+
+    .feature-list {
+      margin-top: 40px;
+      display: grid;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 18px;
+
+      padding: 23px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .feature-item:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .feature-item-number {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.2rem;
+    }
+
+    .feature-item h4 {
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .feature-item p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================================
+       10. TIMELINE
+    ========================================================= */
+
+    .timeline-section {
+      background: var(--navy-dark);
+      color: white;
+    }
+
+    .timeline-section .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .timeline-section .section-title {
+      color: white;
+    }
+
+    .timeline-section .section-intro {
+      color: #bfcbd5;
+    }
+
+    .timeline {
+      margin-top: 65px;
+
+      position: relative;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+      top: 16px;
+      left: 0;
+      right: 0;
+
+      height: 1px;
+      background: rgba(255,255,255,0.22);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-top: 50px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 10px;
+      left: 0;
+
+      width: 13px;
+      height: 13px;
+
+      border-radius: 50%;
+      background: var(--gold-light);
+      border: 3px solid var(--navy-dark);
+
+      box-shadow:
+        0 0 0 1px var(--gold-light);
+    }
+
+    .timeline-year {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--gold-light);
+    }
+
+    .timeline-item h3 {
+      margin: 10px 0;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+    }
+
+    .timeline-item p {
+      color: #bfcbd5;
+      font-size: 0.88rem;
+      max-width: 260px;
+    }
+
+
+    /* =========================================================
+       11. POLICY DEBATE
+    ========================================================= */
+
+    .debate {
+      background:
+        linear-gradient(
+          180deg,
+          var(--cream) 0%,
+          #eee9e0 100%
+        );
+    }
+
+    .debate-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 70px;
+
+      margin-top: 55px;
+    }
+
+    .debate-question {
+      background: var(--navy);
+      color: white;
+
+      padding: 45px;
+      border-radius: 28px;
+
+      position: sticky;
+      top: 120px;
+      align-self: start;
+    }
+
+    .debate-question small {
+      display: block;
+
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      margin-bottom: 18px;
+    }
+
+    .debate-question h3 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .debate-points {
+      display: grid;
+      gap: 16px;
+    }
+
+    .debate-card {
+      background: rgba(255,255,255,0.7);
+
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .debate-card small {
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .debate-card h4 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 1.6rem;
+      margin: 7px 0 10px;
+    }
+
+    .debate-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+
+    /* =========================================================
+       12. CA / ORANGE COUNTY
+    ========================================================= */
+
+    .local-section {
+      background: white;
+    }
+
+    .local-grid {
+      margin-top: 55px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .local-panel {
+      min-height: 380px;
+      border-radius: 26px;
+      padding: 40px;
+
+      border: 1px solid var(--border);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .local-panel.ca {
+      background: var(--blue-pale);
+    }
+
+    .local-panel.oc {
+      background: #f5efe5;
+    }
+
+    .local-panel .giant-letter {
+      position: absolute;
+      right: 15px;
+      bottom: -60px;
+
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 13rem;
+
+      line-height: 1;
+      color: rgba(20, 38, 61, 0.045);
+    }
+
+    .local-panel small {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .local-panel h3 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 2.5rem;
+      margin: 15px 0;
+    }
+
+    .local-panel p {
+      max-width: 480px;
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       13. ACTORS / DECISION MAKERS
+    ========================================================= */
+
+    .actors {
+      background: var(--cream);
+    }
+
+    .actors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+
+      margin-top: 55px;
+
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      overflow: hidden;
+    }
+
+    .actor {
+      background: var(--cream);
+      min-height: 300px;
+      padding: 33px;
+    }
+
+    .actor-level {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 50%;
+
+      color: var(--navy);
+      font-family: var(--serif);
+    }
+
+    .actor h3 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 1.5rem;
+      margin: 26px 0 13px;
+    }
+
+    .actor p {
+      color: var(--muted);
+      font-size: 0.87rem;
+    }
+
+
+    /* =========================================================
+       14. RIGHTS & LAW
+    ========================================================= */
+
+    .law-section {
+      background: var(--white);
+    }
+
+    .law-list {
+      margin-top: 55px;
+    }
+
+    .law-row {
+      display: grid;
+      grid-template-columns: 0.35fr 0.65fr;
+      gap: 50px;
+
+      padding: 38px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .law-row:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .law-name {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 1.7rem;
+      line-height: 1.1;
+    }
+
+    .law-description {
+      color: var(--muted);
+    }
+
+
+    /* =========================================================
+       15. REFERENCES
+    ========================================================= */
+
+    .sources {
+      background: var(--navy);
+      color: white;
+    }
+
+    .sources .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .sources .section-title {
+      color: white;
+    }
+
+    .sources .section-intro {
+      color: #c6d0d9;
+    }
+
+    .source-list {
+      margin-top: 50px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .source-item {
+      display: grid;
+      grid-template-columns: 50px 1fr auto;
+      gap: 18px;
+      align-items: center;
+
+      padding: 20px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .source-number {
+      font-family: var(--serif);
+      color: var(--gold-light);
+    }
+
+    .source-item h4 {
+      font-size: 0.96rem;
+      margin-bottom: 3px;
+    }
+
+    .source-item p {
+      color: #aebdc9;
+      font-size: 0.82rem;
+    }
+
+    .source-link {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-light);
+    }
+
+
+    /* =========================================================
+       16. CONTRIBUTORS
+    ========================================================= */
+
+    .contributors {
+      background: var(--cream-dark);
+    }
+
+    .contributor-grid {
+      margin-top: 50px;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .contributor-card {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      padding: 26px;
+    }
+
+    .contributor-card h3 {
+      font-family: var(--serif);
+      color: var(--navy);
+      font-size: 1.3rem;
+    }
+
+    .contributor-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+
+    /* =========================================================
+       17. FOOTER
+    ========================================================= */
+
+    footer {
+      background: var(--navy-dark);
+      color: white;
+      padding: 65px 0 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 50px;
+
+      padding-bottom: 45px;
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .footer-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 4rem);
+      max-width: 600px;
+      line-height: 1;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      gap: 10px 35px;
+
+      font-size: 0.8rem;
+      color: #bac5ce;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 25px;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      color: #8796a3;
+      font-size: 0.72rem;
+    }
+
+
+    /* =========================================================
+       18. SCROLL REVEAL
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       19. RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1050px) {
+
+      .nav-links {
+        gap: 17px;
+        font-size: 0.68rem;
+      }
+
+      .hero-grid,
+      .feature-grid,
+      .debate-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brief-card {
+        max-width: 620px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .timeline {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline-item {
+        border-top: 1px solid rgba(255,255,255,0.2);
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+
+      .actors-grid,
+      .contributor-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .debate-question {
+        position: static;
+      }
+    }
+
+
+    @media (max-width: 820px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+
+        top: 86px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 28px 5%;
+
+        background: var(--cream);
+        border-bottom: 1px solid var(--border);
+
+        box-shadow: 0 18px 30px rgba(20, 38, 61, 0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        gap: 50px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.5rem, 14vw, 6rem);
+      }
+
+      .card-grid,
+      .local-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .law-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .source-item {
+        grid-template-columns: 38px 1fr;
+      }
+
+      .source-link {
+        grid-column: 2;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+    }
+
+
+    @media (max-width: 600px) {
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .brand-text small {
+        display: none;
+      }
+
+      .brand-text strong {
+        font-size: 0.92rem;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .brief-card {
+        padding: 28px;
+      }
+
+      .card-grid,
+      .timeline,
+      .actors-grid,
+      .contributor-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-visual {
+        min-height: 430px;
+      }
+
+      .local-panel {
+        min-height: 320px;
+      }
+
+      .footer-nav {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================================================
+       ANNOUNCEMENT
+  ========================================================== -->
+
+  <div class="announcement">
+    EDUCATION POLICY PROJECT
+    <span>·</span>
+    SCHOOL FINANCE & THE TEACHER PIPELINE
+  </div>
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <header class="site-header">
+    <div class="container navbar">
+
+      <a href="#home" class="brand">
+        <div class="brand-mark">FF</div>
+
+        <div class="brand-text">
+          <small>Education Policy Project</small>
+          <strong>Funding the Future</strong>
+        </div>
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+      >
+        Menu
+      </button>
+
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#timeline">History</a></li>
+        <li><a href="#teachers">Teachers</a></li>
+        <li><a href="#california">CA / OC</a></li>
+        <li><a href="#policy">Debate</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ul>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section class="hero" id="home">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-label">
+            Education · Equity · Policy
+          </div>
+
+          <h1>
+            Funding<br>
+            <em>the Future.</em>
+          </h1>
+
+          <p class="hero-description">
+            Exploring how federal, state, and local funding shapes
+            California's public schools, the teaching profession,
+            and the pathway into the classroom.
+          </p>
+
+
+          <div class="hero-buttons">
+
+            <a href="#overview" class="button button-primary">
+              Explore the Project ↓
+            </a>
+
+            <a href="#sources" class="button button-secondary">
+              View Sources
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <aside class="brief-card reveal">
+
+          <div class="brief-card-number">01</div>
+
+          <h3>The Policy Question</h3>
+
+          <p class="placeholder">
+            Add a short version of your group's central policy
+            question here.
+          </p>
+
+          <hr>
+
+          <div class="brief-meta">
+
+            <div class="brief-meta-row">
+              <span>Policy Area</span>
+              <span>School Finance</span>
+            </div>
+
+            <div class="brief-meta-row">
+              <span>Primary Focus</span>
+              <span>Teacher Pipeline</span>
+            </div>
+
+            <div class="brief-meta-row">
+              <span>Geographic Focus</span>
+              <span>California / Orange County</span>
+            </div>
+
+            <div class="brief-meta-row">
+              <span>Course</span>
+              <span>[Course Name]</span>
+            </div>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         OVERVIEW
+    ========================================================== -->
+
+    <section class="section overview" id="overview">
+
+      <div class="container reveal">
+
+        <div class="eyebrow">The Big Picture</div>
+
+        <h2 class="section-title">
+          Who pays for public education—and what happens when
+          funding shapes who can afford to become a teacher?
+        </h2>
+
+        <p class="overview-text placeholder">
+          Use this section for a concise introduction to your topic.
+          Explain the core funding issue, why it matters, and why
+          educators should understand this debate.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FUNDING
+    ========================================================== -->
+
+    <section class="section funding" id="funding">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Where the Money Comes From
+          </div>
+
+          <h2 class="section-title">
+            One school system.<br>
+            Three major sources of funding.
+          </h2>
+
+          <p class="section-intro placeholder">
+            Introduce the basic structure of federal, state, and
+            local education funding here.
+          </p>
+
+        </div>
+
+
+        <div class="card-grid">
+
+          <article class="fund-card reveal">
+
+            <div>
+
+              <div class="card-index">01</div>
+
+              <h3>Federal<br>Funding</h3>
+
+              <p class="placeholder">
+                Add information about the federal share of school
+                funding, Title I, IDEA, grants, and the federal
+                government's role.
+              </p>
+
+            </div>
+
+            <div class="card-tag">
+              Add Statistic
+            </div>
+
+          </article>
+
+
+          <article class="fund-card reveal">
+
+            <div>
+
+              <div class="card-index">02</div>
+
+              <h3>State<br>Funding</h3>
+
+              <p class="placeholder">
+                Explain California's role, Proposition 98,
+                the Local Control Funding Formula, and other
+                state-level programs.
+              </p>
+
+            </div>
+
+            <div class="card-tag">
+              Largest Share
+            </div>
+
+          </article>
+
+
+          <article class="fund-card reveal">
+
+            <div>
+
+              <div class="card-index">03</div>
+
+              <h3>Local<br>Funding</h3>
+
+              <p class="placeholder">
+                Discuss property taxes, district revenue,
+                local bonds, parcel taxes, and other local
+                funding sources.
+              </p>
+
+            </div>
+
+            <div class="card-tag">
+              Local Context
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         TEACHER PIPELINE
+    ========================================================== -->
+
+    <section class="section feature" id="teachers">
+
+      <div class="container feature-grid">
+
+        <div class="feature-visual reveal">
+
+          <div class="visual-caption">
+
+            <small>Teacher Pipeline</small>
+
+            <h3>
+              From preparation to profession.
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <div class="feature-content reveal">
+
+          <div class="eyebrow">
+            Why Funding Matters
+          </div>
+
+          <h2>
+            The cost of becoming—and remaining—a teacher.
+          </h2>
+
+          <p class="placeholder">
+            Use this area to connect educational funding to teacher
+            recruitment, preparation, compensation, working
+            conditions, and retention.
+          </p>
+
+
+          <div class="feature-list">
+
+            <div class="feature-item">
+
+              <div class="feature-item-number">01</div>
+
+              <div>
+                <h4>Teacher Preparation</h4>
+
+                <p class="placeholder">
+                  Cost of credential programs, student teaching,
+                  tuition, living expenses, etc.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+              <div class="feature-item-number">02</div>
+
+              <div>
+                <h4>Student Teacher Compensation</h4>
+
+                <p class="placeholder">
+                  Introduce paid student teaching and California's
+                  student teacher stipend policy.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+              <div class="feature-item-number">03</div>
+
+              <div>
+                <h4>Teacher Retention</h4>
+
+                <p class="placeholder">
+                  Add research connecting school resources,
+                  compensation, working conditions, and turnover.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="feature-item">
+
+              <div class="feature-item-number">04</div>
+
+              <div>
+                <h4>Teacher Shortages</h4>
+
+                <p class="placeholder">
+                  Discuss high-need subjects, regions, and
+                  student populations.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         TIMELINE
+    ========================================================== -->
+
+    <section
+      class="section timeline-section"
+      id="timeline"
+    >
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            How We Got Here
+          </div>
+
+          <h2 class="section-title">
+            A brief history of California school finance.
+          </h2>
+
+          <p class="section-intro placeholder">
+            Replace these placeholders with the most important
+            policy events in your final timeline.
+          </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              1971
+            </div>
+
+            <h3>Serrano v. Priest</h3>
+
+            <p class="placeholder">
+              Add explanation of why this case mattered for
+              school finance equity.
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              1978
+            </div>
+
+            <h3>Proposition 13</h3>
+
+            <p class="placeholder">
+              Add explanation of property-tax limits and the shift
+              toward greater state responsibility.
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              1988
+            </div>
+
+            <h3>Proposition 98</h3>
+
+            <p class="placeholder">
+              Add explanation of California's minimum education
+              funding guarantee.
+            </p>
+
+          </article>
+
+
+          <article class="timeline-item reveal">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-year">
+              2013+
+            </div>
+
+            <h3>LCFF & Beyond</h3>
+
+            <p class="placeholder">
+              Discuss LCFF and add more recent teacher-pipeline
+              legislation as your project develops.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CALIFORNIA / ORANGE COUNTY
+    ========================================================== -->
+
+    <section
+      class="section local-section"
+      id="california"
+    >
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Local Context
+          </div>
+
+          <h2 class="section-title">
+            California policy.<br>
+            Orange County classrooms.
+          </h2>
+
+          <p class="section-intro placeholder">
+            Compare California with other states and then zoom into
+            what this means for schools and teachers in Orange County.
+          </p>
+
+        </div>
+
+
+        <div class="local-grid">
+
+          <article class="local-panel ca reveal">
+
+            <span class="giant-letter">CA</span>
+
+            <small>State Level</small>
+
+            <h3>California</h3>
+
+            <p class="placeholder">
+              Add information about California's distinctive
+              funding structure, LCFF, current legislation,
+              teacher preparation programs, and statewide funding.
+            </p>
+
+          </article>
+
+
+          <article class="local-panel oc reveal">
+
+            <span class="giant-letter">OC</span>
+
+            <small>Local Level</small>
+
+            <h3>Orange County</h3>
+
+            <p class="placeholder">
+              Add a district example, local budget numbers,
+              teacher salaries, student needs, or another
+              Orange County comparison.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         POLICY DEBATE
+    ========================================================== -->
+
+    <section
+      class="section debate"
+      id="policy"
+    >
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            The Current Debate
+          </div>
+
+          <h2 class="section-title">
+            Paying for the teacher pipeline.
+          </h2>
+
+          <p class="section-intro placeholder">
+            This section should explain the competing ideas,
+            tradeoffs, and unanswered questions surrounding
+            your topic.
+          </p>
+
+        </div>
+
+
+        <div class="debate-grid">
+
+          <aside class="debate-question reveal">
+
+            <small>Central Question</small>
+
+            <h3>
+              Who should pay to prepare the next generation
+              of teachers?
+            </h3>
+
+          </aside>
+
+
+          <div class="debate-points">
+
+            <article class="debate-card reveal">
+
+              <small>Question 01</small>
+
+              <h4>
+                Should student teaching be paid?
+              </h4>
+
+              <p class="placeholder">
+                Add evidence and competing perspectives here.
+              </p>
+
+            </article>
+
+
+            <article class="debate-card reveal">
+
+              <small>Question 02</small>
+
+              <h4>
+                Who should fund it?
+              </h4>
+
+              <p class="placeholder">
+                State government? Districts? Universities?
+                Federal grants? A combination?
+              </p>
+
+            </article>
+
+
+            <article class="debate-card reveal">
+
+              <small>Question 03</small>
+
+              <h4>
+                Should high-need credentials receive more?
+              </h4>
+
+              <p class="placeholder">
+                Discuss math, science, special education,
+                bilingual education, and other shortage areas.
+              </p>
+
+            </article>
+
+
+            <article class="debate-card reveal">
+
+              <small>Question 04</small>
+
+              <h4>
+                Does investment improve retention?
+              </h4>
+
+              <p class="placeholder">
+                Add research connecting preparation,
+                compensation, working conditions, and retention.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         DECISION MAKERS
+    ========================================================== -->
+
+    <section class="section actors">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Who Makes the Decisions?
+          </div>
+
+          <h2 class="section-title">
+            Education finance is governed at multiple levels.
+          </h2>
+
+        </div>
+
+
+        <div class="actors-grid">
+
+          <article class="actor reveal">
+
+            <div class="actor-level">01</div>
+
+            <h3>Federal</h3>
+
+            <p class="placeholder">
+              Congress, U.S. Department of Education,
+              federal legislation and grant programs.
+            </p>
+
+          </article>
+
+
+          <article class="actor reveal">
+
+            <div class="actor-level">02</div>
+
+            <h3>State</h3>
+
+            <p class="placeholder">
+              California Legislature, Governor, CDE,
+              CTC, state budget decisions.
+            </p>
+
+          </article>
+
+
+          <article class="actor reveal">
+
+            <div class="actor-level">03</div>
+
+            <h3>Local</h3>
+
+            <p class="placeholder">
+              School boards, superintendents, districts,
+              county offices of education.
+            </p>
+
+          </article>
+
+
+          <article class="actor reveal">
+
+            <div class="actor-level">04</div>
+
+            <h3>Institutions</h3>
+
+            <p class="placeholder">
+              Universities, credential programs,
+              preparation partners, and other organizations.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         RIGHTS & LEGISLATION
+    ========================================================== -->
+
+    <section class="section law-section">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Rights & Legislation
+          </div>
+
+          <h2 class="section-title">
+            The laws behind the funding.
+          </h2>
+
+          <p class="section-intro placeholder">
+            Use this section to explain the laws, court decisions,
+            constitutional provisions, and legislation relevant
+            to your policy debate.
+          </p>
+
+        </div>
+
+
+        <div class="law-list">
+
+          <div class="law-row reveal">
+
+            <div class="law-name">
+              Serrano v. Priest
+            </div>
+
+            <div class="law-description placeholder">
+              Add explanation and citation.
+            </div>
+
+          </div>
+
+
+          <div class="law-row reveal">
+
+            <div class="law-name">
+              Proposition 13
+            </div>
+
+            <div class="law-description placeholder">
+              Add explanation and citation.
+            </div>
+
+          </div>
+
+
+          <div class="law-row reveal">
+
+            <div class="law-name">
+              Proposition 98
+            </div>
+
+            <div class="law-description placeholder">
+              Add explanation and citation.
+            </div>
+
+          </div>
+
+
+          <div class="law-row reveal">
+
+            <div class="law-name">
+              Current Legislation
+            </div>
+
+            <div class="law-description placeholder">
+              Add AB 121, AB 126, or whichever policies your group
+              ultimately chooses to emphasize.
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         GOALS OF SCHOOLING
+    ========================================================== -->
+
+    <section class="section overview">
+
+      <div class="container reveal">
+
+        <div class="eyebrow">
+          The Larger Question
+        </div>
+
+        <h2 class="section-title">
+          What does an equitable education system owe
+          its students—and its teachers?
+        </h2>
+
+        <p class="overview-text placeholder">
+          Connect your policy debate to the goals of schooling:
+          equity, opportunity, democratic participation,
+          academic access, workforce development, or other
+          course themes.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         GROUP CONTRIBUTIONS
+    ========================================================== -->
+
+    <section class="section contributors">
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Project Team
+          </div>
+
+          <h2 class="section-title">
+            Group Contributions
+          </h2>
+
+          <p class="section-intro">
+            Your assignment requires each member's contribution
+            to be listed immediately before your references.
+          </p>
+
+        </div>
+
+
+        <div class="contributor-grid">
+
+          <article class="contributor-card reveal">
+
+            <h3>Group Member 01</h3>
+
+            <p class="placeholder">
+              Research, writing, website design, data analysis, etc.
+            </p>
+
+          </article>
+
+
+          <article class="contributor-card reveal">
+
+            <h3>Group Member 02</h3>
+
+            <p class="placeholder">
+              Add contribution here.
+            </p>
+
+          </article>
+
+
+          <article class="contributor-card reveal">
+
+            <h3>Group Member 03</h3>
+
+            <p class="placeholder">
+              Add contribution here.
+            </p>
+
+          </article>
+
+
+          <article class="contributor-card reveal">
+
+            <h3>Group Member 04</h3>
+
+            <p class="placeholder">
+              Add contribution here.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SOURCES / REFERENCES
+    ========================================================== -->
+
+    <section
+      class="section sources"
+      id="sources"
+    >
+
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Research
+          </div>
+
+          <h2 class="section-title">
+            Sources & References
+          </h2>
+
+          <p class="section-intro">
+            Replace these placeholders with your final APA
+            references and links.
+          </p>
+
+        </div>
+
+
+        <div class="source-list">
+
+          <article class="source-item reveal">
+
+            <div class="source-number">01</div>
+
+            <div>
+              <h4>Public Policy Institute of California</h4>
+
+              <p class="placeholder">
+                Add article title and APA citation.
+              </p>
+            </div>
+
+            <a href="#" class="source-link">
+              View Source ↗
+            </a>
+
+          </article>
+
+
+          <article class="source-item reveal">
+
+            <div class="source-number">02</div>
+
+            <div>
+              <h4>
+                California Department of Education
+              </h4>
+
+              <p class="placeholder">
+                Add LCFF source and APA citation.
+              </p>
+            </div>
+
+            <a href="#" class="source-link">
+              View Source ↗
+            </a>
+
+          </article>
+
+
+          <article class="source-item reveal">
+
+            <div class="source-number">03</div>
+
+            <div>
+              <h4>
+                California Commission on Teacher Credentialing
+              </h4>
+
+              <p class="placeholder">
+                Add Student Teacher Stipend Program source.
+              </p>
+            </div>
+
+            <a href="#" class="source-link">
+              View Source ↗
+            </a>
+
+          </article>
+
+
+          <article class="source-item reveal">
+
+            <div class="source-number">04</div>
+
+            <div>
+              <h4>
+                Learning Policy Institute
+              </h4>
+
+              <p class="placeholder">
+                Add teacher shortage / retention source.
+              </p>
+            </div>
+
+            <a href="#" class="source-link">
+              View Source ↗
+            </a>
+
+          </article>
+
+
+          <article class="source-item reveal">
+
+            <div class="source-number">05</div>
+
+            <div>
+              <h4>
+                Additional Source
+              </h4>
+
+              <p class="placeholder">
+                Add citation.
+              </p>
+            </div>
+
+            <a href="#" class="source-link">
+              View Source ↗
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-top">
+
+        <div class="footer-title">
+          Funding the Future.
+        </div>
+
+
+        <nav class="footer-nav">
+
+          <a href="#overview">Overview</a>
+          <a href="#funding">Funding</a>
+
+          <a href="#timeline">History</a>
+          <a href="#teachers">Teacher Pipeline</a>
+
+          <a href="#california">California / OC</a>
+          <a href="#policy">Policy Debate</a>
+
+          <a href="#sources">References</a>
+          <a href="#home">Back to Top ↑</a>
+
+        </nav>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <span>
+          Education Policy Final Project
+        </span>
+
+        <span>
+          [University / Course] · 2026
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script>
+
+    /* -------------------------------
+       MOBILE MENU
+    -------------------------------- */
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+        });
+
+      });
+
+
+
+    /* -------------------------------
+       SCROLL REVEAL
+    -------------------------------- */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const observer = new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.12
+      }
+
+    );
+
+
+    revealElements.forEach(element => {
+
+      observer.observe(element);
+
+    });
+
+  </script>
+
+</body>
+</html>
